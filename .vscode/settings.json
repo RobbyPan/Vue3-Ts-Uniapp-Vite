@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "基础配置"
+        "基础配置",
+        "utils"
     ]
 }

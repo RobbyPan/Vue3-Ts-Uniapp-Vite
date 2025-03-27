@@ -47,3 +47,12 @@ export const getQueryString = (path: string, name: string) => {
   }
   return '';
 };
+
+import { format } from 'date-fns';
+/**
+ * 获取当前时间
+ * @param formats 时间格式 默认：YYYY-MM-DD HH:mm:ss
+ */
+export const getCurrentTime = (formats: string = 'YYYY-MM-DD HH:mm:ss') => {
+  return format(new Date(), 'yyyy-MM-dd HH:mm:ss');
+};
