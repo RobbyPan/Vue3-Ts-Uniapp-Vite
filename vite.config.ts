@@ -16,7 +16,7 @@ export default defineConfig({
       '/test': {
         target: baseURL, // 后端服务实际地址
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: (path) => path.replace(/^\/test/, ''),
       },
     },
   },
