@@ -5,9 +5,9 @@ const httpInterceptor = {
   // 拦截前触发
   invoke(options: UniApp.RequestOptions) {
     // 非http请求，添加前缀
-    // if (!options.url.startsWith('http')) {
-    //   options.url = '/test' + options.url;
-    // }
+    if (!options.url.startsWith('http')) {
+      options.url = '/test' + options.url;
+    }
     options.timeout = timeout;
     options.header = {
       ...options.header,
