@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import uni from '@dcloudio/vite-plugin-uni';
 
+// 开发环境判断等参考文档https://uniapp.dcloud.net.cn/worktile/running-env.html；默认打包后前后端同源部署，所以此处baseUrl仅为开发环境
 const baseURL: string = '';
 
 // https://vitejs.dev/config/
