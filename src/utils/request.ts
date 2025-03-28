@@ -4,9 +4,11 @@ const timeout = 60000;
 const httpInterceptor = {
   // 拦截前触发
   invoke(options: UniApp.RequestOptions) {
-    // 非http请求，添加前缀
-    if (!options.url.startsWith('http')) {
-      options.url = '/test' + options.url;
+    if (process.env.NODE_ENV === 'development') {
+      // 开发环境下，添加前缀
+      if (!options.url.startsWith('http')) {
+        options.url = '/dev-api' + options.url;
+      }
     }
     options.timeout = timeout;
     options.header = {

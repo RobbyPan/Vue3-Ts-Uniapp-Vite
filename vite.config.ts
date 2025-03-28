@@ -1,8 +1,7 @@
 import { defineConfig } from 'vite';
 import uni from '@dcloudio/vite-plugin-uni';
 
-const baseURL: string = 'http://192.168.7.180:8088/'; //测试环境
-// const baseURL: string = ''; //正式环境
+const baseURL: string = '';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,10 +12,10 @@ export default defineConfig({
     hmr: true, // 开启热更新
     proxy: {
       // 本地开发环境通过代理实现跨域，生产环境使用 nginx 转发
-      '/test': {
+      '/dev-api': {
         target: baseURL, // 后端服务实际地址
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/test/, ''),
+        rewrite: (path) => path.replace(/^\/dev-api/, ''),
       },
     },
   },
